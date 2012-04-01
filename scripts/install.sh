@@ -11,6 +11,6 @@ then
   echo "$LINE" >> "$FILE"
 fi
 
-
+bash update.sh
 
 
