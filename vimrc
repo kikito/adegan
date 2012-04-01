@@ -44,11 +44,15 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz                      " c
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/* " vendor and sass-generated stuff
 set wildignore+=*.swp,*~,._*                                                 " backup and temp files
 
-" Backup and swap
+" Backup, swap and undo settings
+set undofile                     " Save undo's after file closes
+set undolevels=1000              " How many undos
+set undoreload=10000             " number of lines to save for undo
+set undodir=~/.vim/_undo         " where to save undo histories
 set backupdir=~/.vim/_backup/    " where to put backup files.
 set directory=~/.vim/_swap/      " where to put swap files.
 
-" colorscheme setting
+" colorscheme settings
 let g:solarized_termcolors=256
 set t_Co=16
 set background=dark
@@ -56,11 +60,7 @@ colorscheme solarized
 
 
 " key settings
-let mapleader=","      " set the <leader> key to ,
+let mapleader=","           " set the <leader> key to ,
 
-set pastetoggle=<F2>   " f2 toggles the 'paste' mode; it allows you to paste text without trying to 'auto-indent' it
-
-
-
-
-
+set pastetoggle=<F2>        " f2 toggles the 'paste' mode; it allows you to paste text without trying to 'auto-indent' it
+nnoremap <F3> :GundoToggle<CR> " f3 toggles 'gundo' - the awesome gundo plugin
