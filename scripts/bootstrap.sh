@@ -12,7 +12,7 @@ if [[ ( -e $PREV ) || ( -h $PREV ) ]]; then
 fi
 
 # Clone adegan into .vim
-git clone https://kikito@github.com/kikito/adegan.git $HOME/.vim \
+git clone https://github.com/kikito/adegan.git $HOME/.vim \
   || die "Could not clone the repository to ${HOME}/.vim"
 
 # Run install.sh inside .vim
