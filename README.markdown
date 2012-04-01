@@ -8,9 +8,9 @@ This is my custom vim installation. I've tested it over Ubuntu only.
 
 ## Installation
 
-You need certain prerequisites. Make sure you have git, bash and curl installed in your machine before attempting to install this.
+You need certain prerequisites. Make sure you have git, bash, grep and curl installed in your machine before attempting to install this.
 
-    sudo apt-get install bash git curl
+    sudo apt-get install git bash grep curl
 
 Once the prerequisites are satisfied, install Adegan by executing this command:
 
