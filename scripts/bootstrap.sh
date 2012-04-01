@@ -17,4 +17,4 @@ git clone https://github.com/kikito/adegan.git $HOME/.vim \
 
 # Run install.sh inside .vim
 cd $HOME/.vim || die "Could not go into the ${HOME}/.vim"
-scripts/install.sh || die "install.sh failed."
+bash scripts/install.sh || die "install.sh failed."
