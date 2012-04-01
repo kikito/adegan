@@ -1,9 +1,10 @@
 
-echo 'updating main .vim repo ...'
+echo 'Updating main .vim repo ...'
 cd $HOME/.vim
-git fetch
+git pull > /dev/null
 
-echo 'updating plugins ...'
-git submodule init
-git submodule update
-git submodule foreach git pull
+echo 'Updating plugins ...'
+git submodule sync > /dev/null
+git submodule update --init > /dev/null
+
+echo 'Finished updating agedan'
