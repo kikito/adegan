@@ -1,4 +1,4 @@
-== Adegan
+# Adegan
 
 > They're Adegan crystals—precious and hard to find. Jedi use them to make the best lightsabers.
 >
@@ -6,7 +6,7 @@
 
 This is my custom vim installation. I've tested it over Ubuntu only.
 
-=== Installation
+## Installation
 
 You need certain prerequisites. Make sure you have git, bash and curl installed in your machine before attempting to install this.
 
@@ -16,7 +16,7 @@ Once the prerequisites are satisfied, install Adegan by executing this command:
 
     curl -Lo- https://raw.github.com/kikito/adegan/master/scripts/bootstrap.sh | bash
 
-=== Credits
+## Credits
 
 I've included lots of plugins using pathogen: http://github.com/tpope/vim-pathogen
 
