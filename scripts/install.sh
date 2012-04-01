@@ -11,6 +11,7 @@ then
   echo "$LINE" >> "$FILE"
 fi
 
-bash update.sh
+UPDATE=$HOME/.vim/scripts/update.sh
+bash $UPDATE
 
 
