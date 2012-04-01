@@ -64,15 +64,15 @@ colorscheme solarized
 " key settings
 let mapleader=","              " set the <leader> key to ,
 
-set pastetoggle=<F2>           " f2 toggles the 'paste' mode; it allows you to paste text without trying to 'auto-indent' it
-nnoremap <F3> :GundoToggle<CR> " f3 toggles 'gundo' - the awesome gundo plugin
+nnoremap <F2> :NERDTreeToggle<CR> " f2 toggles 'nerdtree'
+nnoremap <F3> :GundoToggle<CR>    " f3 toggles 'gundo' - the awesome gundo plugin
+nnoremap <F4> :TagbarToggle<CR>   " f4 toggles the tagbar
 
 " Map ESC to jk
 imap jk <ESC>
 imap Jk <ESC>
 imap JK <ESC>
 
-nmap <leader>n :NERDTreeToggle<CR> " leader-n toggles nerdtree
 nmap <leader>q :wqa!<CR>           " easier quit-and-save
 nmap <leader>w :w!<CR>             " easier write
 nmap <leader><Esc> :q!<CR>         " easier quit-and-not-save
