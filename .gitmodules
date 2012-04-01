@@ -3,4 +3,7 @@
 	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
-	url = http://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
