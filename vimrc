@@ -60,7 +60,12 @@ colorscheme solarized
 
 
 " key settings
-let mapleader=","           " set the <leader> key to ,
+let mapleader=","              " set the <leader> key to ,
 
-set pastetoggle=<F2>        " f2 toggles the 'paste' mode; it allows you to paste text without trying to 'auto-indent' it
+set pastetoggle=<F2>           " f2 toggles the 'paste' mode; it allows you to paste text without trying to 'auto-indent' it
 nnoremap <F3> :GundoToggle<CR> " f3 toggles 'gundo' - the awesome gundo plugin
+
+
+
+
+
