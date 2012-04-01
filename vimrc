@@ -3,7 +3,6 @@ call pathogen#infect()
 
 
 " General settings
-
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
@@ -21,8 +20,8 @@ set backspace=indent,eol,start      " backspace through everything in insert mod
 
 set list                            " Show invisible characters using listchars
 set listchars=""                      " Reset the listchars
-set listchars=tab:\ \                 " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.                " show trailing spaces as dots
+set listchars=tab:»\                  " show tabs as raquos
+set listchars+=trail:·                " show trailing spaces as dots
 set listchars+=extends:>              " The character to show in the last column when wrap is
                                       " off and the line continues beyond the right of the screen
 set listchars+=precedes:<             " The character to show in the last column when wrap is
@@ -55,9 +54,11 @@ set t_Co=16
 set background=dark
 colorscheme solarized
 
-" key settings
-let mapleader="," " set the <leader> key to ,
 
+" key settings
+let mapleader=","      " set the <leader> key to ,
+
+set pastetoggle=<F2>   " f2 toggles the 'paste' mode; it allows you to paste text without trying to 'auto-indent' it
 
 
 
