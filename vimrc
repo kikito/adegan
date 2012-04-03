@@ -1,6 +1,7 @@
 " invoke pathogen (vim package manager)
 call pathogen#infect()
 
+
 " General settings
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
@@ -11,9 +12,16 @@ set laststatus=2      " Always show the statusline
 set ttyfast           " Makes vim behave faster in certain terminals
 syntax enable         " Turn on syntax highlighting allowing local overrides
 
-set cursorline        " Highlight the line where the cursor is
-autocmd WinEnter * setlocal cursorline       " Highlight current line when a window gets focused
-autocmd WinLeave * setlocal nocursorline     " Remove highlight when the window loses its focus
+
+" Folding settings
+set foldmethod=syntax " Use syntax-provided folding when available
+set foldlevel=99      " Folds are open by default
+
+
+" Cursor line settings
+set cursorline                           " Highlight the line where the cursor is
+autocmd WinEnter * setlocal cursorline   " Highlight current line when a window gets focused
+autocmd WinLeave * setlocal nocursorline " Remove highlight when the window loses its focus
 
 
 " Whitespace settings
