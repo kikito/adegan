@@ -18,7 +18,7 @@ if [ -L "$PREV" ]; then
   rm -rf "${PREV}.pre-adegan"
   mv "${PREV}" "${PREV}.pre-adegan" || die "Could not move ${PREV} to ${PREV}.pre-adegan"
   echo "${PREV} has been renamed to ${PREV}.pre-adegan"
-end
+fi
 
 # Clone adegan into .vim
 git clone https://github.com/kikito/adegan.git $HOME/.vim \
