@@ -38,7 +38,7 @@ set listchars+=trail:·                " show trailing spaces as dots
 set listchars+=extends:>              " The character to show in the last column when the line continues right
 set listchars+=precedes:<             " The character to show in the last column when the line continues left
 
-autocmd BufWritePre * :%s/\s\+$//e  " remove trailing spaces from files on save
+autocmd BufWritePre * kz|:%s/\s\+$//e|'z " remove trailing spaces (respecting cursor position) when saving files
 filetype plugin indent on           " allow for individual indentations per file type
 
 
