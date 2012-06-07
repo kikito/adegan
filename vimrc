@@ -85,3 +85,27 @@ nmap <leader>q :wqa!<CR>           " easier quit-and-save
 nmap <leader>w :w!<CR>             " easier write
 nmap <leader><Esc> :q!<CR>         " easier quit-and-not-save
 
+" Buffer movement/splitting
+" Splits  ,v to open a new vertical split and switch to it
+nn <leader>v <C-w>v<C-w>l
+nn <leader>s <C-w>s<C-w>l
+
+" Move between splits with leader instead of C-w
+nn <leader>h <C-w>h
+nn <leader>j <C-w>j
+nn <leader>k <C-w>k
+nn <leader>l <C-w>l
+
+
+
+
+
+" remap space bar to search
+:nmap <Space> /
+
+
+
+
+
+
+
