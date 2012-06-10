@@ -69,7 +69,16 @@ set t_Co=16
 set background=dark
 colorscheme solarized
 
+
+" language-dependant settings
+
+" In go, don't replace tabs by spaces, use tabs, and make them 4-spaces long,
+" and don't show special characters
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
+
+
 " key settings
+
 let mapleader=","              " set the <leader> key to ,
 
 nnoremap <F2> :NERDTreeToggle<CR> " f2 toggles 'nerdtree'
@@ -83,7 +92,6 @@ imap JK <ESC>
 
 nmap <leader>q :wqa!<CR>           " easier quit-and-save
 nmap <leader>w :w!<CR>             " easier write
-nmap <leader><Esc> :q!<CR>         " easier quit-and-not-save
 
 " Buffer movement/splitting
 " Splits  ,v to open a new vertical split and switch to it
