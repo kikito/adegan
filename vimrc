@@ -75,7 +75,8 @@ colorscheme solarized
 " In go, don't replace tabs by spaces, use tabs, and make them 4-spaces long,
 " and don't show special characters
 autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
-
+" reformat the file before each save" reformat the file before each save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " key settings
 
