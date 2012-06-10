@@ -79,19 +79,31 @@ autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 no
 
 " key settings
 
-let mapleader=","              " set the <leader> key to ,
+let mapleader=","              " set the <leader> key to comma
 
-nnoremap <F2> :NERDTreeToggle<CR> " f2 toggles 'nerdtree'
-nnoremap <F3> :GundoToggle<CR>    " f3 toggles 'gundo' - the awesome gundo plugin
-nnoremap <F4> :TagbarToggle<CR>   " f4 toggles the tagbar
+" 'panes' are controlled with F2,F3 & F4, who toggle nerdtree, gundo & tagbar
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :GundoToggle<CR>
+nnoremap <F4> :TagbarToggle<CR>
+
+" I want to learn hjkl without going bonkers. Let me have a message instead of NOP
+noremap <up>    :echoerr 'USE K TO GO UP'<CR>
+noremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
+noremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
+noremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
+inoremap <up>    :echoerr 'USE K TO GO UP'<CR>
+inoremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
+inoremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
+inoremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
 
 " Map ESC to jk
 imap jk <ESC>
 imap Jk <ESC>
 imap JK <ESC>
 
-nmap <leader>q :wqa!<CR>           " easier quit-and-save
-nmap <leader>w :w!<CR>             " easier write
+" comma q quits and saves, comma w saves without warnings
+nmap <leader>q :wqa!<CR>
+nmap <leader>w :w!<CR>
 
 " Buffer movement/splitting
 " Splits  ,v to open a new vertical split and switch to it
@@ -104,7 +116,11 @@ nn <leader>j <C-w>j
 nn <leader>k <C-w>k
 nn <leader>l <C-w>l
 
+" Comma-comma zooms in/out the current window
+map <leader><leader> :ZoomWin<CR>
 
+" Tab switches open buffers
+nmap <tab> <C-w><C-w>
 
 
 
