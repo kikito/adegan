@@ -39,7 +39,7 @@ set listchars+=extends:>              " The character to show in the last column
 set listchars+=precedes:<             " The character to show in the last column when the line continues left
 
 autocmd BufWritePre * kz|:%s/\s\+$//e|'z " remove trailing spaces (respecting cursor position) when saving files
-filetype plugin indent on           " allow for individual indentations per file type
+filetype plugin indent on                " allow for individual indentations per file type
 
 
 " Search settings
