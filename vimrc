@@ -62,6 +62,9 @@ set undodir=~/.vim/_undo         " where to save undo histories
 set backupdir=~/.vim/_backup/    " where to put backup files.
 set directory=~/.vim/_swap/      " where to put swap files.
 
+" Deactivate the PRESS ENTER OR TYPE COMMAND TO CONTINUE message
+set shortmess=atI
+
 " colorscheme settings
 let g:solarized_termcolors=256
 let g:solarized_visibility="low"
@@ -91,10 +94,10 @@ noremap <up>    :echoerr 'USE K TO GO UP'<CR>
 noremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
 noremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
 noremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
-inoremap <up>    :echoerr 'USE K TO GO UP'<CR>
-inoremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
-inoremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
-inoremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
+:inoremap <up>    <ESC>:echoerr 'USE K TO GO UP'<CR>
+:inoremap <down>  <ESC>:echoerr 'USE J TO GO DOWN'<CR>
+:inoremap <right> <ESC>:echoerr 'USE L TO GO RIGHT'<CR>
+:inoremap <left>  <ESC>:echoerr 'USE H TO GO LEFT'<CR>
 
 " Map ESC to jk
 imap jk <ESC>
