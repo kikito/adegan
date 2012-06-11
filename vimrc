@@ -1,7 +1,6 @@
 " invoke pathogen (vim package manager)
 call pathogen#infect()
 
-
 " General settings
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
@@ -65,6 +64,7 @@ set directory=~/.vim/_swap/      " where to put swap files.
 
 " colorscheme settings
 let g:solarized_termcolors=256
+let g:solarized_visibility="low"
 set t_Co=16
 set background=dark
 colorscheme solarized
@@ -72,9 +72,8 @@ colorscheme solarized
 
 " language-dependant settings
 
-" In go, don't replace tabs by spaces, use tabs, and make them 4-spaces long,
-" and don't show special characters
-autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
+" In go, don't replace tabs by spaces, use tabs, and make them 4-spaces long
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
 " reformat the file before each save" reformat the file before each save
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
@@ -102,9 +101,24 @@ imap jk <ESC>
 imap Jk <ESC>
 imap JK <ESC>
 
+" Wrapped lines goes down/up to next row, rather than next line in file.
+nnoremap j gj
+nnoremap k gk
+
+" Do not exit visual mode when shifting
+vnoremap < <gv
+vnoremap > >gv
+
 " comma q quits and saves, comma w saves without warnings
 nmap <leader>q :wqa!<CR>
 nmap <leader>w :w!<CR>
+
+" shift key fixes
+cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+cmap Tabe tabe
 
 " Buffer movement/splitting
 " Splits  ,v to open a new vertical split and switch to it
