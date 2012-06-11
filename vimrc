@@ -134,8 +134,8 @@ nn <leader>j <C-w>j
 nn <leader>k <C-w>k
 nn <leader>l <C-w>l
 
-" Comma-comma zooms in/out the current window
-map <leader><leader> :ZoomWin<CR>
+" Comma zooms in/out the current window
+map <leader>z :ZoomWin<CR>
 
 " Tab switches open buffers
 nmap <tab> <C-w><C-w>
