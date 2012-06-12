@@ -138,10 +138,10 @@ nn <leader>v <C-w>v<C-w>l
 nn <leader>s <C-w>s<C-w>l
 
 " Move between splits with leader instead of C-w
-nn <leader>h <C-w>h
-nn <leader>j <C-w>j
-nn <leader>k <C-w>k
-nn <leader>l <C-w>l
+nn <C-h> <C-w>h
+nn <C-j> <C-w>j
+nn <C-k> <C-w>k
+nn <C-l> <C-w>l
 
 " Comma zooms in/out the current window
 map <leader>z :ZoomWin<CR>
@@ -149,7 +149,15 @@ map <leader>z :ZoomWin<CR>
 " Tab switches open buffers
 nmap <tab> <C-w><C-w>
 
-
+" Align commas, equal signs, colons and pipes with leader = <separator>
+nmap <Leader>== :Tabularize / =<CR>
+vmap <Leader>== :Tabularize / =<CR>
+nmap <Leader>=> :Tabularize / =><CR>
+vmap <Leader>=> :Tabularize / =><CR>
+nmap <Leader>=: :Tabularize / :\zs<CR>
+vmap <Leader>=: :Tabularize / :\zs<CR>
+nmap <Leader>=; :Tabularize / ;\zs<CR>
+vmap <Leader>=; :Tabularize / ;\zs<CR>
 
 " remap space bar to search
 :nmap <Space> /
