@@ -95,19 +95,23 @@ nnoremap <F3> :GundoToggle<CR>
 nnoremap <F4> :TagbarToggle<CR>
 
 " I want to learn hjkl without going bonkers. Let me have a message instead of NOP
-noremap <up>    :echoerr 'USE K TO GO UP'<CR>
-noremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
-noremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
-noremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
-:inoremap <up>    <ESC>:echoerr 'USE K TO GO UP'<CR>
-:inoremap <down>  <ESC>:echoerr 'USE J TO GO DOWN'<CR>
-:inoremap <right> <ESC>:echoerr 'USE L TO GO RIGHT'<CR>
-:inoremap <left>  <ESC>:echoerr 'USE H TO GO LEFT'<CR>
+noremap <up>    :echom 'USE K TO GO UP'<CR>
+noremap <down>  :echom 'USE J TO GO DOWN'<CR>
+noremap <left>  :echom 'USE H TO GO LEFT'<CR>
+noremap <right> :echom 'USE L TO GO RIGHT'<CR>
+:inoremap <up>    <ESC>:echom 'USE K TO GO UP'<CR>
+:inoremap <down>  <ESC>:echom 'USE J TO GO DOWN'<CR>
+:inoremap <right> <ESC>:echom 'USE L TO GO RIGHT'<CR>
+:inoremap <left>  <ESC>:echom 'USE H TO GO LEFT'<CR>
 
 " Map ESC to jk
 imap jk <ESC>
 imap Jk <ESC>
 imap JK <ESC>
+
+" Use jk for moving up/down in autocomplete (supertab)
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
