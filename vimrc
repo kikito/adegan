@@ -132,12 +132,11 @@ cmap wQ wq
 cmap Q q
 cmap Tabe tabe
 
-" Buffer movement/splitting
-" Splits  ,v to open a new vertical split and switch to it
+" Split buffer vertically or horizontally: leader v, leader h
 nn <leader>v <C-w>v<C-w>l
-nn <leader>s <C-w>s<C-w>l
+nn <leader>h <C-w>s<C-w>l
 
-" Move between splits with leader instead of C-w
+" Move between splits with leader-direction instead of c-w direction
 nn <C-h> <C-w>h
 nn <C-j> <C-w>j
 nn <C-k> <C-w>k
