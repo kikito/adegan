@@ -9,6 +9,7 @@ set encoding=utf-8    " Set default encoding to UTF-8
 set hidden            " hide open buffers instead of closing them, when opening a new one with :e
 set laststatus=2      " Always show the statusline
 set ttyfast           " Makes vim behave faster in certain terminals
+set scrolloff=3       " Show 3 extra lines when scrolling up/down
 syntax enable         " Turn on syntax highlighting allowing local overrides
 
 
