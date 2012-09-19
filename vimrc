@@ -78,11 +78,17 @@ set background=dark
 colorscheme solarized
 
 
-" language-dependant settings
 if has("autocmd")
-  " In go, don't replace tabs by spaces, use tabs, and make them 4-spaces long
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Golang:
+  " Use tabs, and make them 4-spaces long
   autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
-  " reformat the file before each save" reformat the file before each save
+  " reformat the file before each save
   autocmd FileType go autocmd BufWritePre <buffer> Fmt
 endif
 
