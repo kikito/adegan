@@ -133,7 +133,6 @@ nmap <leader>q :wqa!<CR>
 nmap <leader>w :w!<CR>
 
 " shift key fixes
-cmap W w
 cmap WQ wq
 cmap wQ wq
 cmap Q q
