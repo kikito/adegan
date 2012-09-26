@@ -141,7 +141,7 @@ cmap Tabe tabe
 
 " Split buffer vertically or horizontally: leader v, leader h
 nn <leader>v <C-w>v<C-w>l
-nn <leader>h <C-w>s<C-w>l
+nn <leader>h <C-w>s<C-w>j
 
 " Move between splits with leader-direction instead of c-w direction
 nn <C-h> <C-w>h
