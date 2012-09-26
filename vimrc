@@ -10,21 +10,12 @@ set hidden            " hide open buffers instead of closing them, when opening 
 set laststatus=2      " Always show the statusline
 set ttyfast           " Makes vim behave faster in certain terminals
 set scrolloff=3       " Show 3 extra lines when scrolling up/down
+set cursorline                           " Highlight the line where the cursor is
 syntax enable         " Turn on syntax highlighting allowing local overrides
-
 
 " Folding settings
 set foldmethod=syntax " Use syntax-provided folding when available
 set foldlevel=99      " Folds are open by default
-
-
-" Cursor line settings
-set cursorline                           " Highlight the line where the cursor is
-if has("autocmd")
-  autocmd WinEnter * setlocal cursorline   " Highlight current line when a window gets focused
-  autocmd WinLeave * setlocal nocursorline " Remove highlight when the window loses its focus
-endif
-
 
 " Whitespace settings
 set nowrap                          " don't wrap lines
@@ -40,11 +31,7 @@ set listchars+=trail:·                " show trailing spaces as dots
 set listchars+=extends:>              " The character to show in the last column when the line continues right
 set listchars+=precedes:<             " The character to show in the last column when the line continues left
 
-filetype plugin indent on                " allow for individual indentations per file type
-
-if has("autocmd")
-  autocmd BufWritePre * kz|:%s/\s\+$//e|'z " remove trailing spaces (respecting cursor position) when saving files
-endif
+filetype plugin indent on           " allow for individual indentations per file type
 
 " Search settings
 set hlsearch    " highlight matches
@@ -70,16 +57,29 @@ set directory=~/.vim/_swap/      " where to put swap files.
 " Deactivate the PRESS ENTER OR TYPE COMMAND TO CONTINUE message
 set shortmess=atI
 
-" colorscheme settings
+" Colorscheme settings
 let g:solarized_termcolors=256
 let g:solarized_visibility="low"
 set t_Co=16
 set background=dark
 colorscheme solarized
 
-
+" Autocommands
 if has("autocmd")
-  " Jump to last cursor position unless it's invalid or in an event handler
+
+  " When entering a window, activate cursorline
+  autocmd WinEnter * setlocal cursorline
+
+  " When leaving a window, deactivate cursorline
+  autocmd WinLeave * setlocal nocursorline
+
+  " before writing a buffer, remove trailing spaces (respecting cursor position) when saving files
+  autocmd BufWritePre * kz|:%s/\s\+$//e|'z
+
+  " before writing a buffer, if the current directory does not exist, create it
+  autocmd BufWritePre * :execute ':silent !mkdir -p %:p:h'
+
+  " After opening, jump to last known cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
