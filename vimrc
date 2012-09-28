@@ -77,7 +77,7 @@ if has("autocmd")
   autocmd BufWritePre * kz|:%s/\s\+$//e|'z
 
   " before writing a buffer, if the current directory does not exist, create it
-  autocmd BufWritePre * :execute ':silent !mkdir -p %:p:h'
+  autocmd BufWritePre * :silent !mkdir -p %:p:h
 
   " After opening, jump to last known cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
