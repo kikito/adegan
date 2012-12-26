@@ -96,11 +96,6 @@ endif
 
 let mapleader=","              " set the <leader> key to comma
 
-" 'panes' are controlled with F2,F3 & F4, who toggle nerdtree, gundo & tagbar
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F3> :GundoToggle<CR>
-nnoremap <F4> :TagbarToggle<CR>
-
 " I want to learn hjkl without going bonkers. Let me have a message instead of NOP
 noremap <up>    :echoerr 'USE K TO GO UP'<CR>
 noremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
@@ -155,9 +150,6 @@ nn <C-H> <C-w>h
 nn <C-J> <C-w>j
 nn <C-K> <C-w>k
 nn <C-L> <C-w>l
-
-" Comma zooms in/out the current window
-map <leader>z :ZoomWin<CR>
 
 " Tab switches open buffers
 nmap <tab> <C-w><C-w>
