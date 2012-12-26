@@ -118,11 +118,15 @@ imap JK <ESC>
 
 " Use jk for moving up/down in autocomplete (supertab)
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> J ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+inoremap <expr> K ((pumvisible())?("\<C-p>"):("k"))
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
+nnoremap J gj
 nnoremap k gk
+nnoremap K gk
 
 " Do not exit visual mode when shifting
 vnoremap < <gv
@@ -147,6 +151,10 @@ nn <C-h> <C-w>h
 nn <C-j> <C-w>j
 nn <C-k> <C-w>k
 nn <C-l> <C-w>l
+nn <C-H> <C-w>h
+nn <C-J> <C-w>j
+nn <C-K> <C-w>k
+nn <C-L> <C-w>l
 
 " Comma zooms in/out the current window
 map <leader>z :ZoomWin<CR>
