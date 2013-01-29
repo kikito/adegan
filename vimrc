@@ -44,6 +44,7 @@ set gdefault    " by default, replace globally (you can ommit /g at the end of a
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem          " general programming stuff
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz                      " compressed files
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/* " vendor and sass-generated stuff
+set wildignore+=*/node_modules/*
 set wildignore+=*.swp,*~,._*                                                 " backup and temp files
 
 " Backup, swap and undo settings
