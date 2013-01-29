@@ -32,7 +32,6 @@ set listchars+=extends:>              " The character to show in the last column
 set listchars+=precedes:<             " The character to show in the last column when the line continues left
 
 set autoindent
-filetype plugin indent on           " allow for individual indentations per file type
 
 " Search settings
 set hlsearch    " highlight matches
@@ -68,6 +67,7 @@ colorscheme solarized
 
 " Autocommands
 if has("autocmd")
+  filetype plugin indent on           " allow for individual indentations per file type
 
   " When entering a window, activate cursorline
   autocmd WinEnter * setlocal cursorline
