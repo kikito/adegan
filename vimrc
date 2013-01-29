@@ -113,9 +113,7 @@ imap JK <ESC>
 
 " Use jk for moving up/down in autocomplete (supertab)
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> J ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
-inoremap <expr> K ((pumvisible())?("\<C-p>"):("k"))
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
