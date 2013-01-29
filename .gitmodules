@@ -73,3 +73,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = git://github.com/elzr/vim-json.git
