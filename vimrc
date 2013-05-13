@@ -123,6 +123,10 @@ nnoremap J gj
 nnoremap k gk
 nnoremap K gk
 
+" Capslock H and L are just stupid LOL
+nnoremap H h
+nnoremap L l
+
 " Do not exit visual mode when shifting
 vnoremap < <gv
 vnoremap > >gv
