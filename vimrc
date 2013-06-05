@@ -132,7 +132,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " comma q quits and saves, comma w saves without warnings
-nmap <leader>q :wq!<CR>
+nmap <leader>q :q!<CR>
 nmap <leader>w :w!<CR>
 
 " shift key fixes
