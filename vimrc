@@ -172,6 +172,9 @@ vmap <Leader>=; :Tabularize / ;\zs<CR>
 " remap space bar to search
 :nmap <Space> /
 
+" hide search results when pressing return a second time
+nnoremap <silent><cr> :let @/ = ""<cr>
+
 
 
 
