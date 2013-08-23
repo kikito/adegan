@@ -11,6 +11,7 @@ set laststatus=2      " Always show the statusline
 set ttyfast           " Makes vim behave faster in certain terminals
 set scrolloff=3       " Show 3 extra lines when scrolling up/down
 set cursorline                           " Highlight the line where the cursor is
+set clipboard=unnamed " Use system clipboard
 syntax enable         " Turn on syntax highlighting allowing local overrides
 
 " Folding settings
