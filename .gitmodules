@@ -1,18 +1,12 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-gundo"]
-	path = bundle/vim-gundo
-	url = git://github.com/sjl/gundo.vim.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = git://github.com/tpope/vim-endwise.git
@@ -64,18 +58,9 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
-[submodule "bundle/vim-vroom"]
-	path = bundle/vim-vroom
-	url = git://github.com/skalnik/vim-vroom.git
-[submodule "bundle/vim-eunuch"]
-	path = bundle/vim-eunuch
-	url = git://github.com/tpope/vim-eunuch.git
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "bundle/vim-json"]
-	path = bundle/vim-json
-	url = git://github.com/elzr/vim-json.git
 [submodule "bundle/vim-jst"]
 	path = bundle/vim-jst
 	url = git://github.com/briancollins/vim-jst.git
