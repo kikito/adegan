@@ -17,6 +17,7 @@ syntax enable         " Turn on syntax highlighting allowing local overrides
 " Folding settings
 set foldmethod=syntax " Use syntax-provided folding when available
 set foldlevel=99      " Folds are open by default
+set foldlevelstart=99 " Folds are open by default (new way)
 
 " Whitespace settings
 set nowrap                          " don't wrap lines
@@ -178,6 +179,10 @@ nnoremap <silent><cr> :let @/ = ""<cr>
 " Syntactic plugin
 "   Suppress html warnings due to angular custom fields
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+" Markdown plugin
+"   Do not start with everything folded
+let g:vim_markdown_initial_foldlevel=99
 
 
 
