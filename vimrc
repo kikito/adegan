@@ -176,6 +176,9 @@ vmap <Leader>=; :Tabularize / ;\zs<CR>
 " hide search results when pressing return a second time
 nnoremap <silent><cr> :let @/ = ""<cr>
 
+" deactivate 'Entering Ex mode' prompt
+:map Q <Nop>
+
 " Syntactic plugin
 "   Suppress html warnings due to angular custom fields
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
