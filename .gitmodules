@@ -70,9 +70,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/vim-pasta"]
 	path = bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta.git
