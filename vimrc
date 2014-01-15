@@ -100,16 +100,6 @@ endif
 
 let mapleader=","              " set the <leader> key to comma
 
-" I want to learn hjkl without going bonkers. Let me have a message instead of NOP
-noremap <up>    :echoerr 'USE K TO GO UP'<CR>
-noremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
-noremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
-noremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
-inoremap <up>    <ESC>:echoerr 'USE K TO GO UP'<CR>
-inoremap <down>  <ESC>:echoerr 'USE J TO GO DOWN'<CR>
-inoremap <right> <ESC>:echoerr 'USE L TO GO RIGHT'<CR>
-inoremap <left>  <ESC>:echoerr 'USE H TO GO LEFT'<CR>
-
 " Map ESC to jk
 imap jk <ESC>
 imap Jk <ESC>
@@ -197,10 +187,6 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -223,3 +209,23 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
+" Neosnippet configuration
+" ------------------------
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
