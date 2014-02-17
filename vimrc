@@ -159,9 +159,6 @@ vmap <Leader>=; :Tabularize / ;\zs<CR>
 " remap space bar to search
 :nmap <Space> /
 
-" hide search results when pressing return a second time
-nnoremap <silent><cr> :let @/ = ""<cr>
-
 " deactivate 'Entering Ex mode' prompt
 :map Q <Nop>
 
@@ -191,9 +188,9 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  " For inserting the <CR>:
+  " return neocomplete#close_popup() . "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
