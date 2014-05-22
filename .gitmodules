@@ -76,3 +76,6 @@
 [submodule "bundle/neosnippet-snippets"]
 	path = bundle/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = https://github.com/slim-template/vim-slim.git
