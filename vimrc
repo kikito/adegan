@@ -96,6 +96,10 @@ if has("autocmd")
   autocmd FileType go autocmd BufWritePre <buffer> Fmt
 endif
 
+" Enable spell checking for markdown files
+au BufRead *.md setlocal spell
+au BufRead *.markdown setlocal spell
+
 " key settings
 
 let mapleader=","              " set the <leader> key to comma
@@ -225,4 +229,3 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-
