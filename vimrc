@@ -240,6 +240,9 @@ else
   \ }
 endif
 
+" use lua matcher
+let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
+
 " Neosnippet configuration
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
