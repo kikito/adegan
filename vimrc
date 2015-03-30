@@ -34,6 +34,7 @@ set listchars+=extends:>              " The character to show in the last column
 set listchars+=precedes:<             " The character to show in the last column when the line continues left
 
 set autoindent
+set mouse=a     " Use the mouse inside iterm2
 
 " Search settings
 set hlsearch    " highlight matches
