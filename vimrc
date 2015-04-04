@@ -171,6 +171,10 @@ vmap <Leader>=; :Tabularize / ;\zs<CR>
 "   Suppress html warnings due to angular custom fields
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
+" Use the location list instead of the quickfix list for syntastic (otherwise
+" it can override :grep results)
+let g:syntastic_auto_loc_list=1
+
 " Markdown plugin
 "   Do not start with everything folded
 let g:vim_markdown_initial_foldlevel=99
@@ -233,6 +237,7 @@ let g:ctrlp_max_files = 0
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+  let g:ctrlp_use_caching = 0 " Ag is fast enough to not needing caching
 else
   let g:ctrlp_user_command = {
       \ 'types': {
@@ -245,6 +250,8 @@ endif
 
 " use lua matcher
 let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
+
+command! -nargs=+ G execute 'silent grep! <args>' | copen 42
 
 " Neosnippet configuration
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
