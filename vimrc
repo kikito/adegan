@@ -182,6 +182,8 @@ let g:neocomplete#enable_at_startup = 1 " Enable neocomplete.
 let g:neocomplete#enable_smart_case = 1 " Enable smartcase in neocomplete.
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#enable_cursor_hold_i = 1  " Wait a little before showing the autocomplete
+let g:neocomplete#cursor_hold_i_time = 300  " How much time before showing the autocomplete (in ms)
 
 " Define what is considered a keyword for neocomplete
 if !exists('g:neocomplete#keyword_patterns')
