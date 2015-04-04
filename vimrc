@@ -251,7 +251,25 @@ endif
 " use lua matcher
 let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
 
+" The :G command is like :grep, but silent, and opens the quickfix window
+" instead of the first matching result
 command! -nargs=+ G execute 'silent grep! <args>' | copen 42
+
+" Auto-adjust the quickfix window height
+au FileType qf call AdjustWindowHeight(3, 10)
+ function! AdjustWindowHeight(minheight, maxheight)
+     let l = 1
+     let n_lines = 0
+     let w_width = winwidth(0)
+     while l <= line('$')
+         " number to float for division
+         let l_len = strlen(getline(l)) + 0.0
+         let line_width = l_len/w_width
+         let n_lines += float2nr(ceil(line_width))
+         let l += 1
+     endw
+     exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
+ endfunction
 
 " Neosnippet configuration
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
