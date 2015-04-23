@@ -171,10 +171,6 @@ vmap <Leader>=; :Tabularize / ;\zs<CR>
 "   Suppress html warnings due to angular custom fields
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
-" Use the location list instead of the quickfix list for syntastic (otherwise
-" it can override :grep results)
-let g:syntastic_auto_loc_list=1
-
 " Markdown plugin
 "   Do not start with everything folded
 let g:vim_markdown_initial_foldlevel=99
