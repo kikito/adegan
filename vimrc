@@ -249,7 +249,7 @@ let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
 
 " The :G command is like :grep, but silent, and opens the quickfix window
 " instead of the first matching result
-command! -nargs=+ G execute 'silent grep! <args>' | copen 42
+command! -nargs=+ G execute 'silent grep! <args>' | copen 42 | redraw!
 
 " Auto-adjust the quickfix window height
 au FileType qf call AdjustWindowHeight(3, 10)
