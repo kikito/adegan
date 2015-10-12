@@ -55,3 +55,6 @@
 [submodule "bundle/ctrlp_luamatcher"]
 	path = bundle/ctrlp_luamatcher
 	url = https://github.com/char101/ctrlp_luamatcher.git
+[submodule "bundle/lexima.vim"]
+	path = bundle/lexima.vim
+	url = https://github.com/cohama/lexima.vim.git
