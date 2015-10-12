@@ -34,9 +34,6 @@
 [submodule "bundle/vim-rspec"]
 	path = bundle/vim-rspec
 	url = git://github.com/skwp/vim-rspec.git
-[submodule "bundle/scss-syntax.vim"]
-	path = bundle/scss-syntax.vim
-	url = git://github.com/cakebaker/scss-syntax.vim.git
 [submodule "bundle/vim-golang"]
 	path = bundle/vim-golang
 	url = git://github.com/jnwhiteh/vim-golang.git
