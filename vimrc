@@ -12,6 +12,7 @@ set ttyfast           " Makes vim behave faster in certain terminals
 set scrolloff=3       " Show 3 extra lines when scrolling up/down
 set cursorline                           " Highlight the line where the cursor is
 set clipboard=unnamed " Use system clipboard
+set re=1              " Use old regular expression engine (works better with ruby syntax highlighting, less lag)
 syntax enable         " Turn on syntax highlighting allowing local overrides
 
 " Folding settings
