@@ -72,29 +72,33 @@ colorscheme solarized
 if has("autocmd")
   filetype plugin indent on           " allow for individual indentations per file type
 
-  " When entering a window, activate cursorline
-  autocmd WinEnter * setlocal cursorline
+  augroup vimrc_general
+    autocmd!
 
-  " When leaving a window, deactivate cursorline
-  autocmd WinLeave * setlocal nocursorline
+    " When entering a window, activate cursorline
+    autocmd WinEnter * setlocal cursorline
 
-  " before writing a buffer, remove trailing spaces (respecting cursor position) when saving files
-  autocmd BufWritePre * kz|:%s/\s\+$//e|'z
+    " When leaving a window, deactivate cursorline
+    autocmd WinLeave * setlocal nocursorline
 
-  " before writing a buffer, if the current directory does not exist, create it
-  autocmd BufWritePre * :silent !mkdir -p %:p:h
+    " before writing a buffer, remove trailing spaces (respecting cursor position) when saving files
+    autocmd BufWritePre * kz|:%s/\s\+$//e|'z
 
-  " After opening, jump to last known cursor position unless it's invalid or in an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    " before writing a buffer, if the current directory does not exist, create it
+    autocmd BufWritePre * :silent !mkdir -p %:p:h
 
-  " Golang:
-  " Use tabs, and make them 4-spaces long
-  autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
-  " reformat the file before each save
-  autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    " After opening, jump to last known cursor position unless it's invalid or in an event handler
+    autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+
+    " Golang:
+    " Use tabs, and make them 4-spaces long
+    autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
+    " reformat the file before each save
+    autocmd FileType go autocmd BufWritePre <buffer> Fmt
+  augroup end
 endif
 
 " Enable spell checking for markdown files
@@ -203,11 +207,16 @@ endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+if has("autocmd")
+  augroup vimrc_omnicompletion
+    autocmd!
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  augroup end
+end
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
